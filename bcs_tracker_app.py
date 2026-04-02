@@ -6,7 +6,7 @@ from typing import List, Optional
 import pandas as pd
 import streamlit as st
 
-DB_PATH = Path("bcs_tracker.db")
+DB_PATH = Path("bcs_tracker_v2.db")
 DEFAULT_IMPORT_PATH = Path("Last Blitzkrieg Step Loses.xlsx")
 
 SCHEMA_SQL = """
@@ -361,9 +361,7 @@ def main() -> None:
     st.title("BCS Last Blitzkrieg Tracker")
     st.caption("Roster import, division-based loss entry, damaged-unit view, AV and Non-AV replacements, history, and manual unit add.")
 
-    if DB_PATH.exists():
-        DB_PATH.unlink()
-    
+  
     conn = get_connection()
     init_db(conn)
 
