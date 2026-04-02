@@ -361,6 +361,9 @@ def main() -> None:
     st.title("BCS Last Blitzkrieg Tracker")
     st.caption("Roster import, division-based loss entry, damaged-unit view, AV and Non-AV replacements, history, and manual unit add.")
 
+    if DB_PATH.exists():
+        DB_PATH.unlink()
+    
     conn = get_connection()
     init_db(conn)
 
