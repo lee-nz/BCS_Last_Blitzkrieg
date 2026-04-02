@@ -375,7 +375,7 @@ def main() -> None:
         st.divider()
         st.header("Import roster")
         uploaded = st.file_uploader("Upload roster workbook (.xlsx)", type=["xlsx"])
-        replace_existing = st.checkbox("Replace existing data on import", value=False)
+        replace_existing = st.checkbox("Replace existing data on import", value=True)
 
         if st.button("Import workbook", use_container_width=True):
             try:
