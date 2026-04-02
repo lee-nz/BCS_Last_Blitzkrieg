@@ -376,7 +376,8 @@ def main() -> None:
         st.divider()
         st.header("Import roster")
         uploaded = st.file_uploader("Upload roster workbook (.xlsx)", type=["xlsx"])
-        replace_existing = st.checkbox("Replace existing data on import", value=True)
+        replace_existing = st.checkbox("Start fresh game (replace existing current roster and history", value=False)
+        st.caption("Import is normally only used once at the start of a game. Replacing existing data will clear current losses and history.")
 
         if st.button("Import workbook", use_container_width=True):
             try:
